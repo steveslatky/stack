@@ -22,7 +22,7 @@ function M.highlight_log_buffer(buf)
 	local in_content_block = false
 	local content_depth = 0
 	for i, line in ipairs(lines) do
-		local line_idx = i - 1 -- Convert to 0-based index
+		local line_idx = i - 1
 		if in_content_block then
 			table.insert(highlights, hl.region(line_idx, 0, #line, "StackLogContent"))
 			local open_count = select(2, line:gsub("{", ""))
